@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary": "#735b11", "on-primary-fixed-variant": "#602d8a", "secondary": "#00658d", "inverse-surface": "#303033", "on-tertiary-fixed": "#241a00", "secondary-fixed": "#c6e7ff", "inverse-primary": "#e0b6ff", "surface-bright": "#faf9fb", "surface-variant": "#e3e2e5", "surface-container": "#efedf0", "on-secondary-fixed": "#001e2d", "primary-fixed-dim": "#e0b6ff", "on-surface": "#1b1c1e", "on-background": "#1b1c1e", "on-primary-fixed": "#2d004e", "error": "#ba1a1a", "on-tertiary-container": "#503d00", "surface-container-lowest": "#ffffff", "text-primary": "#0D0E10", "outline-variant": "#cec3d2", "secondary-container": "#55c3ff", "secondary-fixed-dim": "#82cfff", "surface-container-high": "#e9e7ea", "on-error-container": "#93000a", "on-primary-container": "#dcafff", "on-error": "#ffffff", "surface-tint": "#7a47a4", "on-tertiary-fixed-variant": "#584400", "primary": "#501b7a", "surface-container-low": "#f5f3f6", "outline": "#7d7481", "on-secondary-fixed-variant": "#004c6b", "surface-container-highest": "#e3e2e5", "tertiary-fixed": "#ffdf90", "on-secondary-container": "#004f6f", "primary-container": "#693693", "on-secondary": "#ffffff", "text-secondary": "#4B5563", "error-container": "#ffdad6", "text-muted": "#9CA3AF", "surface": "#FCFCFC", "on-primary": "#ffffff", "on-tertiary": "#ffffff", "primary-fixed": "#f2daff", "surface-dim": "#dbd9dc", "tertiary-container": "#c6a858", "tertiary-fixed-dim": "#e3c370", "on-surface-variant": "#4c4450", "surface-lowest": "#FFFFFF", "border-hairline": "#E5E7EB", "background": "#faf9fb", "inverse-on-surface": "#f2f0f3" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "gutter": "1.5rem", "margin-mobile": "1.25rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "gutter-mobile": "1rem", "space-md": "1rem", "space-xl": "2.5rem", "margin": "3rem" }, "fontFamily": { "body-md": ["Plus Jakarta Sans"], "display-xl-mobile": ["Space Grotesk"], "headline-lg": ["Space Grotesk"], "body-lg": ["Plus Jakarta Sans"], "headline-sm": ["Space Grotesk"], "headline-md": ["Space Grotesk"], "display-lg": ["Space Grotesk"], "display-lg-mobile": ["Space Grotesk"], "display-xl": ["Space Grotesk"], "label-md": ["Space Grotesk"], "body-sm": ["Plus Jakarta Sans"], "label-sm": ["Space Grotesk"], "label-lg": ["Space Grotesk"] }, "fontSize": { "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "display-xl-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "display-lg": ["48px", { "lineHeight": "54px", "letterSpacing": "-0.025em", "fontWeight": "600" }], "display-lg-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display-xl": ["60px", { "lineHeight": "68px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.05em", "fontWeight": "600" }] } } } };</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&family=Space+Grotesk:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-text-primary min-h-screen selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-border-hairline"><div class="h-16 w-full max-w-7xl mx-auto px-gutter flex items-center justify-between"><div class="flex items-center gap-space-md"><a class="flex items-center gap-space-sm group" data-path="home" href="#"><div class="w-8 h-8 rounded-none border border-border-hairline flex items-center justify-center bg-surface-lowest overflow-hidden"><img alt="Umojaverse Emblem" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VN2N_br3WMdhqhlYLXWyc18qBdBSIskoVziaHmbHtUfj6RLEjOiY05eqrIcadm_EKeu3lnUhxLdWDmokW_B562ZR2Z8LNQZ4fU1sNe0gZbkEn1k5lGd7Tbw3gtAF9VQSWIkMD2nK5SJXN38vfEKw9t9wjYYtmTX-ERQzPYw5ARJgcigdzLLys05PhQv0IVxldAEMlpBazdw7fvNi70yDrwDmuMRtwP_TjTZ5wo9InMjKmdjGteJ9uNvMFfj_O3BZnWCzOpNMYRvw"/></div><span class="font-headline-sm text-headline-sm tracking-tight text-text-primary font-bold">UMOJAVERSE</span></a><div class="hidden lg:flex items-center gap-space-xs pl-space-sm"><span class="w-1.5 h-1.5 bg-secondary-container inline-block"></span><span class="font-label-sm text-label-sm uppercase text-text-secondary tracking-widest">Builder Collective</span></div></div><nav class="hidden md:flex items-center gap-space-lg h-full" data-active-classes="text-primary-container font-semibold border-b-2 border-primary-container"><a class="h-full flex items-center font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-text-primary transition-colors" data-path="home" href="#">Home</a><a class="h-full flex items-center font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-text-primary transition-colors" data-path="programs" href="#">Programs</a><a class="h-full flex items-center font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-text-primary transition-colors" data-path="projects" href="#">Projects</a><a class="h-full flex items-center font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-text-primary transition-colors" data-path="about" href="#">About</a><a aria-current="page" class="h-full flex items-center uppercase tracking-wider transition-colors text-primary-container font-semibold border-b-2 border-primary-container" data-path="partners" href="#">Partners</a></nav><div class="flex items-center gap-space-md"><a class="relative inline-flex items-center justify-center px-space-md py-2 bg-primary-container text-on-primary font-label-md text-label-md tracking-wider uppercase hover:bg-text-primary transition-colors rounded-none border border-primary-container" data-path="join-the-community" href="#"><span class="relative z-10">Join the Community</span></a><div class="pl-space-xs border-l border-border-hairline"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border-hairline" src="https://lh3.googleusercontent.com/aida/AEtjO1VN2N_br3WMdhqhlYLXWyc18qBdBSIskoVziaHmbHtUfj6RLEjOiY05eqrIcadm_EKeu3lnUhxLdWDmokW_B562ZR2Z8LNQZ4fU1sNe0gZbkEn1k5lGd7Tbw3gtAF9VQSWIkMD2nK5SJXN38vfEKw9t9wjYYtmTX-ERQzPYw5ARJgcigdzLLys05PhQv0IVxldAEMlpBazdw7fvNi70yDrwDmuMRtwP_TjTZ5wo9InMjKmdjGteJ9uNvMFfj_O3BZnWCzOpNMYRvw"/></div></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Top Progress / Category Ribbon -->
+<div class="w-full bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-gutter py-space-sm flex flex-wrap items-center justify-between gap-space-sm text-text-secondary">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 bg-secondary-container inline-block"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-text-primary">Ecosystem Partnerships & Grants Desk</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Direct Builder Protocol // Rev 2025.2</span>
+<span class="hidden sm:inline-block w-1.5 h-1.5 bg-border-hairline"></span>
+<span class="font-label-sm text-label-sm uppercase text-primary-container font-semibold tracking-wider">Accepting Cohort H2 Applications</span>
+</div>
+</div>
+</div>
+<!-- Hero Section -->
+<section class="w-full bg-surface py-margin">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<div class="inline-flex items-center gap-2">
+<span class="w-2.5 h-2.5 bg-secondary-container inline-block"></span>
+<span class="font-label-md text-label-md uppercase tracking-widest text-primary-container font-bold">[04] COLLABORATION & SPONSORSHIP</span>
+</div>
+<h1 class="font-display-xl text-display-xl text-text-primary tracking-tight max-w-4xl">
+            Invest in Africa's premier engineering talent.
+          </h1>
+<p class="font-body-lg text-body-lg text-text-secondary max-w-2xl leading-relaxed">
+            We collaborate with Layer-1/Layer-2 foundations, technology organizations, and ecosystem funds to support emerging African builders through sponsored cohorts, hackathons, and direct research grants.
+          </p>
+<div class="pt-space-sm flex flex-wrap items-center gap-space-md">
+<a class="inline-flex items-center justify-center px-space-xl py-3 bg-primary-container text-on-primary font-label-md text-label-md tracking-wider uppercase hover:bg-text-primary transition-colors shadow-sm" href="#partner-form">
+              Initiate Partnership
+            </a>
+<a class="inline-flex items-center justify-center px-space-lg py-3 bg-surface-lowest text-text-primary font-label-md text-label-md tracking-wider uppercase hover:bg-surface-container transition-colors shadow-sm" href="#pathways">
+              Review Tracks & Terms
+            </a>
+</div>
+</div>
+<!-- Architectural Metric Ledger Card -->
+<div class="lg:col-span-4 bg-surface-lowest p-space-lg flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Guild Performance Ledger</span>
+<span class="inline-flex items-center px-2 py-0.5 bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Audited</span>
+</div>
+<div class="space-y-space-sm">
+<div class="p-space-sm bg-surface-container-low">
+<span class="font-display-lg text-display-lg text-primary-container font-bold">1,840+</span>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">Engineers trained across Rust, Cairo, Solidity, and Distributed Systems.</p>
+</div>
+<div class="p-space-sm bg-surface-container-low">
+<span class="font-display-lg text-display-lg text-text-primary font-bold">100%</span>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">Direct stipend execution with on-chain transparency reports for sponsors.</p>
+</div>
+<div class="p-space-sm bg-surface-container-low">
+<span class="font-display-lg text-display-lg text-secondary font-bold">4 Hubs</span>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">Dedicated builder hubs in Nairobi, Lagos, Accra, and Kigali.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Visual Feature Break: Active Innovation Space -->
+<section class="w-full bg-surface-container-low py-space-xl">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="relative bg-surface-lowest overflow-hidden shadow-sm">
+<div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+<div class="lg:col-span-7 h-80 lg:h-auto min-h-[340px] relative">
+<img class="w-full h-full object-cover" data-alt="Modern African tech innovation hub in Nairobi during an intense evening collaborative session. Young African software engineers, both men and women, gathered around a large light-wood work table with open laptops running code editors and terminal dashboards. Ambient warm indoor track lighting paired with sleek green neon accent strips and large floor-to-ceiling glass windows revealing city lights. Clean, highly professional, collaborative builder atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa_f2DbMUAxCqx-7FtHilXwVaIRseVfqnCwMozDR9Vlkjhe4RsWXXRq64haZuYBHiTDbOzQ_5ikL1Ec5d9NhPIVH5LlpeugWpS7sGEDEgXBarDe4f2Ij7n3taGUV-CLAxUGm3ST_SwIqTMjPs_k7GqKzPvSAaY7kixnEDXN-dRQMwFt9Cbt4zSpoIx-6KMytuKvy8eUdM2-572P7fLSsO3h_m7Lkzn3jO_5Ou5iAPaYOpxF17Unq52"/>
+<div class="absolute bottom-4 left-4 bg-text-primary/90 text-on-primary px-3 py-1 text-label-sm font-label-sm uppercase tracking-widest backdrop-blur-sm">
+              Nairobi Hub // Cohort 04 Architecture Sprint
+            </div>
+</div>
+<div class="lg:col-span-5 p-space-xl flex flex-col justify-between bg-surface-lowest">
+<div>
+<div class="flex items-center gap-2 mb-space-sm">
+<span class="w-2 h-2 bg-primary-container"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-text-muted">Real Physical Footprint</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-text-primary">
+                Uncompromising infrastructure for high-density builder output.
+              </h2>
+<p class="font-body-md text-body-md text-text-secondary mt-space-sm leading-relaxed">
+                African tech talent faces systemic bottlenecks: intermittent power grids and expensive local compute. Foundation partnerships establish high-speed solar-backed spaces, hardware grants, and residential living stipends that yield production-grade repositories.
+              </p>
+</div>
+<div class="pt-space-md mt-space-md bg-surface-container-low p-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-primary font-semibold block mb-1">Ecosystem Impact Standard</span>
+<p class="font-body-sm text-body-sm text-text-secondary">
+                Zero vanity hackathons. Every sponsored cohort concludes with audited open-source protocol pull requests and verifiable testnet deployments.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Strategic Partnership Pathways -->
+<section class="w-full bg-surface py-margin" id="pathways">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-sm">
+<div>
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary-container font-semibold block mb-1">Strategic Frameworks</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary">Partnership Pathways</h2>
+</div>
+<p class="font-body-md text-body-md text-text-secondary max-w-md">
+          Select an established deployment format or combine initiatives for high-signal ecosystem expansion.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Track 1 -->
+<div class="bg-surface-lowest p-space-xl flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-widest px-2.5 py-1 bg-surface-container-high text-primary-container font-bold">Track 01</span>
+<span class="font-label-sm text-label-sm text-text-muted">12-Week Immersion</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-space-sm">
+              Sponsor a Cohort or Fellowship
+            </h3>
+<p class="font-body-md text-body-md text-text-secondary mb-space-md leading-relaxed">
+              Direct sponsorship of an intensive developer fellowship track (e.g., EVM engineering, Cairo/Starknet, Solana native, zero-knowledge primitives).
+            </p>
+<div class="bg-surface-container-low p-space-md mb-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-text-primary font-bold block mb-space-xs">What It Delivers</span>
+<ul class="space-y-space-xs font-body-sm text-body-sm text-text-secondary">
+<li class="flex items-start gap-2">
+<span class="text-secondary font-bold">/</span>
+<span>Foundation-specific technical curriculum & developer documentation integration.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-secondary font-bold">/</span>
+<span>Full student cost coverage (compute, hardware stipends, mentorship hours).</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-secondary font-bold">/</span>
+<span>Direct hiring and fellowship interview access to the top 10% of graduating fellows.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="pt-space-sm">
+<button class="w-full text-left inline-flex items-center justify-between text-primary-container font-label-md text-label-md uppercase tracking-wider font-semibold py-2 hover:text-text-primary transition-colors" onclick="prefillTrack('Sponsor a Fellowship')">
+<span>Select Cohort Track</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Track 2 -->
+<div class="bg-surface-lowest p-space-xl flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-widest px-2.5 py-1 bg-surface-container-high text-secondary font-bold">Track 02</span>
+<span class="font-label-sm text-label-sm text-text-muted">Physical Residency</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-space-sm">
+              Host a Regional Hacker House
+            </h3>
+<p class="font-body-md text-body-md text-text-secondary mb-space-md leading-relaxed">
+              Co-brand an in-person, 7-to-14 day high-density hacker residency in Nairobi, Lagos, Accra, or Kigali with dedicated devrel workshops and high-speed infrastructure.
+            </p>
+<div class="bg-surface-container-low p-space-md mb-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-text-primary font-bold block mb-space-xs">What It Delivers</span>
+<ul class="space-y-space-xs font-body-sm text-body-sm text-text-secondary">
+<li class="flex items-start gap-2">
+<span class="text-secondary font-bold">/</span>
+<span>Co-branded physical spaces with round-the-clock solar backup and Starlink access.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-secondary font-bold">/</span>
+<span>48-hour build bounties with local ecosystem judges and international tech leads.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-secondary font-bold">/</span>
+<span>High-fidelity video documentation, live demos, and community PR dissemination.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="pt-space-sm">
+<button class="w-full text-left inline-flex items-center justify-between text-secondary font-label-md text-label-md uppercase tracking-wider font-semibold py-2 hover:text-text-primary transition-colors" onclick="prefillTrack('Fund Hacker House')">
+<span>Select Hacker House Track</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Track 3 -->
+<div class="bg-surface-lowest p-space-xl flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-widest px-2.5 py-1 bg-surface-container-high text-tertiary font-bold">Track 03</span>
+<span class="font-label-sm text-label-sm text-text-muted">Milestone-Based</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-space-sm">
+              Post Bounties & Protocol Grants
+            </h3>
+<p class="font-body-md text-body-md text-text-secondary mb-space-md leading-relaxed">
+              Deploy specialized RFPs, SDK tooling bounties, and technical protocol grants directly to our pre-vetted guild engineers with built-in escrow oversight.
+            </p>
+<div class="bg-surface-container-low p-space-md mb-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-text-primary font-bold block mb-space-xs">What It Delivers</span>
+<ul class="space-y-space-xs font-body-sm text-body-sm text-text-secondary">
+<li class="flex items-start gap-2">
+<span class="text-secondary font-bold">/</span>
+<span>Targeted scoping support from senior guild architects to draft effective grant RFPs.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-secondary font-bold">/</span>
+<span>End-to-end pull request verification, security code audits, and benchmark testing.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-secondary font-bold">/</span>
+<span>Multi-sig escrow disbursement tied directly to GitHub milestone verification.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="pt-space-sm">
+<button class="w-full text-left inline-flex items-center justify-between text-tertiary font-label-md text-label-md uppercase tracking-wider font-semibold py-2 hover:text-text-primary transition-colors" onclick="prefillTrack('Post Technical Bounties')">
+<span>Select Grants & Bounties</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Verified & Ecosystem Collaboration Backing -->
+<section class="w-full bg-surface-container-low py-margin">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg gap-space-sm">
+<div>
+<span class="font-label-md text-label-md uppercase tracking-widest text-text-muted font-bold block mb-1">Institutional Network</span>
+<h2 class="font-headline-md text-headline-md text-text-primary">Verified Ecosystem Backing</h2>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary max-w-sm">
+          Trusted by top protocol foundations and public-goods allocators building enduring sovereign digital infrastructure.
+        </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-space-sm">
+<div class="bg-surface-lowest p-space-lg flex flex-col justify-between h-36 shadow-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Grant Benefactor</span>
+<div>
+<p class="font-headline-sm text-headline-sm text-text-primary font-bold">Ethereum (ESP)</p>
+<span class="font-body-sm text-body-sm text-secondary">Ecosystem Support Program</span>
+</div>
+</div>
+<div class="bg-surface-lowest p-space-lg flex flex-col justify-between h-36 shadow-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Public Goods</span>
+<div>
+<p class="font-headline-sm text-headline-sm text-text-primary font-bold">Gitcoin</p>
+<span class="font-body-sm text-body-sm text-secondary">Matching Pool Partner</span>
+</div>
+</div>
+<div class="bg-surface-lowest p-space-lg flex flex-col justify-between h-36 shadow-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">ZK Rollups</span>
+<div>
+<p class="font-headline-sm text-headline-sm text-text-primary font-bold">Starknet Fdn</p>
+<span class="font-body-sm text-body-sm text-secondary">Cairo Fellowship Sponsor</span>
+</div>
+</div>
+<div class="bg-surface-lowest p-space-lg flex flex-col justify-between h-36 shadow-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">L1 Network</span>
+<div>
+<p class="font-headline-sm text-headline-sm text-text-primary font-bold">Solana Fdn</p>
+<span class="font-body-sm text-body-sm text-secondary">Regional Hackathon Host</span>
+</div>
+</div>
+<div class="bg-surface-lowest p-space-lg flex flex-col justify-between h-36 shadow-sm bg-surface-container">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-container font-semibold">[Available Slot]</span>
+<div>
+<p class="font-headline-sm text-headline-sm text-text-primary font-bold">Partner Placement</p>
+<a class="font-body-sm text-body-sm text-primary-container underline" href="#partner-form">Reserve H2 Allocation →</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Partnership Principles -->
+<section class="w-full bg-surface py-margin">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="max-w-3xl mb-space-xl">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary-container font-bold block mb-1">Our Charter</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary">Institutional Transparency Principles</h2>
+<p class="font-body-lg text-body-lg text-text-secondary mt-space-sm">
+          Umojaverse is not an advertising agency or a speculative promotional vehicle. We safeguard developer focus through strict editorial and educational independence.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<div class="bg-surface-lowest p-space-xl shadow-sm">
+<div class="w-10 h-10 bg-surface-container-high flex items-center justify-center text-primary-container mb-space-md">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-space-xs">
+            Independent Curriculum
+          </h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+            Sponsoring foundations provide resources, tooling, and technical advisory, but our educational curricula remain completely developer-first, open-source, and academically unbiased.
+          </p>
+</div>
+<div class="bg-surface-lowest p-space-xl shadow-sm">
+<div class="w-10 h-10 bg-surface-container-high flex items-center justify-center text-secondary mb-space-md">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-space-xs">
+            Transparent Grants
+          </h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+            100% of student stipend sponsorships reach builders directly. We publish verified quarterly breakdown summaries so sponsors can track every dollar to direct developer survival and output.
+          </p>
+</div>
+<div class="bg-surface-lowest p-space-xl shadow-sm">
+<div class="w-10 h-10 bg-surface-container-high flex items-center justify-center text-tertiary mb-space-md">
+<span class="material-symbols-outlined">shield</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-space-xs">
+            Zero Speculative Endorsements
+          </h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+            We never shill tokens, conduct airdrop farming, or participate in paid marketing campaigns. Our metrics are active GitHub commits, deployed smart contracts, and engineer retention.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Partnership Enquiry Form -->
+<section class="w-full bg-surface-container-low py-margin" id="partner-form">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- Left Side: Editorial Context & Form States -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<div>
+<div class="inline-flex items-center gap-2 mb-space-xs">
+<span class="w-2 h-2 bg-secondary-container"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-text-muted">Inquiry Desk</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-text-primary">
+              Start a Partnership Conversation
+            </h2>
+<p class="font-body-md text-body-md text-text-secondary mt-space-sm leading-relaxed">
+              Tell us about your organization and how you would like to collaborate. Our partnerships lead reviews incoming briefs every Tuesday and Thursday.
+            </p>
+</div>
+<div class="bg-surface-lowest p-space-lg space-y-space-md shadow-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-primary font-bold block">Review SLA & Protocol</span>
+<div class="flex items-start gap-space-sm text-body-sm text-text-secondary">
+<span class="material-symbols-outlined text-secondary text-base mt-0.5">schedule</span>
+<span>Inquiries reviewed within <strong>48 business hours</strong> by our guild operations team.</span>
+</div>
+<div class="flex items-start gap-space-sm text-body-sm text-text-secondary">
+<span class="material-symbols-outlined text-secondary text-base mt-0.5">verified_user</span>
+<span>All proposed grant terms and strategic initiatives remain strictly confidential under mutual NDA if requested.</span>
+</div>
+<div class="flex items-start gap-space-sm text-body-sm text-text-secondary">
+<span class="material-symbols-outlined text-secondary text-base mt-0.5">hub</span>
+<span>Direct access to physical hub leads across Nairobi, Lagos, Accra, and Kigali.</span>
+</div>
+</div>
+<!-- Live Interactive Form State Indicator -->
+<div class="bg-surface-lowest p-space-lg shadow-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted block mb-space-sm">System Status</span>
+<div class="flex items-center gap-space-sm" id="form-status-indicator">
+<span class="w-2.5 h-2.5 bg-secondary-container inline-block"></span>
+<span class="font-label-md text-label-md text-text-primary uppercase tracking-wider font-semibold" id="form-status-text">State: Ready (Idle)</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-space-xs" id="form-status-subtext">
+              Submission pipeline is online and routed to partners@umojaverse.org.
+            </p>
+</div>
+</div>
+<!-- Right Side: The Form -->
+<div class="lg:col-span-7 bg-surface-lowest p-space-xl shadow-md">
+<form class="space-y-space-md" id="enquiry-form" onsubmit="handleFormSubmit(event)">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div>
+<label class="block font-label-sm text-label-sm uppercase tracking-widest text-text-secondary mb-space-xs" for="full-name">
+                  Full Name <span class="text-error">*</span>
+</label>
+<input class="w-full bg-surface-lowest px-4 py-3 font-body-md text-body-md text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary-container" id="full-name" name="fullName" placeholder="e.g. Sarah Chen" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm uppercase tracking-widest text-text-secondary mb-space-xs" for="org-name">
+                  Organization / Foundation Name <span class="text-error">*</span>
+</label>
+<input class="w-full bg-surface-lowest px-4 py-3 font-body-md text-body-md text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary-container" id="org-name" name="orgName" placeholder="e.g. Starknet Foundation, Gitcoin" required="" type="text"/>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm uppercase tracking-widest text-text-secondary mb-space-xs" for="work-email">
+                Work Email <span class="text-error">*</span>
+</label>
+<input class="w-full bg-surface-lowest px-4 py-3 font-body-md text-body-md text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary-container" id="work-email" name="workEmail" placeholder="sarah@foundation.org" required="" type="email"/>
+</div>
+<!-- Partnership Track Selection Pills -->
+<div>
+<label class="block font-label-sm text-label-sm uppercase tracking-widest text-text-secondary mb-space-xs">
+                Partnership Track <span class="text-error">*</span>
+</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs" id="track-selectors">
+<button class="track-btn text-left p-space-sm bg-surface-container-low text-text-primary font-body-sm text-body-sm hover:bg-surface-container transition-colors" onclick="selectTrack(this, 'Sponsor a Fellowship')" type="button">
+<span class="block font-semibold">Sponsor a Fellowship</span>
+<span class="text-text-secondary text-xs">12-week builder cohort</span>
+</button>
+<button class="track-btn text-left p-space-sm bg-surface-container-low text-text-primary font-body-sm text-body-sm hover:bg-surface-container transition-colors" onclick="selectTrack(this, 'Fund Hacker House')" type="button">
+<span class="block font-semibold">Fund Hacker House</span>
+<span class="text-text-secondary text-xs">Physical 14-day residency</span>
+</button>
+<button class="track-btn text-left p-space-sm bg-surface-container-low text-text-primary font-body-sm text-body-sm hover:bg-surface-container transition-colors" onclick="selectTrack(this, 'Post Technical Bounties')" type="button">
+<span class="block font-semibold">Post Technical Bounties</span>
+<span class="text-text-secondary text-xs">Milestone-based RFPs</span>
+</button>
+<button class="track-btn text-left p-space-sm bg-surface-container-low text-text-primary font-body-sm text-body-sm hover:bg-surface-container transition-colors" onclick="selectTrack(this, 'General Ecosystem Support')" type="button">
+<span class="block font-semibold">General Ecosystem Support</span>
+<span class="text-text-secondary text-xs">Hardware, grants & travel</span>
+</button>
+</div>
+<input id="selectedTrackInput" name="selectedTrack" type="hidden" value="Sponsor a Fellowship"/>
+</div>
+<!-- Proposed Budget / Scope Selector -->
+<div>
+<label class="block font-label-sm text-label-sm uppercase tracking-widest text-text-secondary mb-space-xs">
+                Proposed Budget / Scope (USD)
+              </label>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-xs" id="budget-selectors">
+<button class="budget-btn p-space-sm bg-surface-container-low text-text-primary font-label-sm text-label-sm uppercase tracking-wider text-center hover:bg-surface-container transition-colors" onclick="selectBudget(this, '< $10k')" type="button">
+                  < $10k
+                </button>
+<button class="budget-btn p-space-sm bg-primary-container text-on-primary font-label-sm text-label-sm uppercase tracking-wider text-center transition-colors" onclick="selectBudget(this, '$10k – $50k')" type="button">
+                  $10k – $50k
+                </button>
+<button class="budget-btn p-space-sm bg-surface-container-low text-text-primary font-label-sm text-label-sm uppercase tracking-wider text-center hover:bg-surface-container transition-colors" onclick="selectBudget(this, '$50k – $100k+')" type="button">
+                  $50k – $100k+
+                </button>
+<button class="budget-btn p-space-sm bg-surface-container-low text-text-primary font-label-sm text-label-sm uppercase tracking-wider text-center hover:bg-surface-container transition-colors" onclick="selectBudget(this, 'Custom Scope')" type="button">
+                  Custom
+                </button>
+</div>
+<input id="selectedBudgetInput" name="selectedBudget" type="hidden" value="$10k – $50k"/>
+</div>
+<!-- Message / Goals -->
+<div>
+<label class="block font-label-sm text-label-sm uppercase tracking-widest text-text-secondary mb-space-xs" for="message-goals">
+                Message & Target Goals <span class="text-error">*</span>
+</label>
+<textarea class="w-full bg-surface-lowest px-4 py-3 font-body-md text-body-md text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary-container resize-none" id="message-goals" name="messageGoals" placeholder="Describe your initiative, preferred regions, technical focus (e.g., Cairo/Starknet, Rust, DeFi primitives), and target timeline..." required="" rows="4"></textarea>
+</div>
+<!-- Submit Action & Privacy SLA -->
+<div class="pt-space-xs flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-md">
+<button class="inline-flex items-center justify-center px-space-xl py-3.5 bg-primary-container text-on-primary font-label-md text-label-md tracking-wider uppercase font-bold hover:bg-text-primary transition-colors shadow-sm" id="submit-btn" type="submit">
+                Submit Partnership Inquiry
+              </button>
+<span class="font-body-sm text-body-sm text-text-muted">
+                Validation within 48h // Encrypted submission
+              </span>
+</div>
+<!-- Success State Banner (Hidden by default) -->
+<div class="hidden p-space-md bg-surface-container text-text-primary" id="form-success-banner">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-secondary font-bold">check_circle</span>
+<span class="font-label-md text-label-md uppercase font-bold tracking-wider text-secondary">Inquiry Received</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">
+                Thank you. We have logged your partnership parameters and will follow up at the specified work address within two business days.
+              </p>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ / Clarifications Section -->
+<section class="w-full bg-surface py-margin">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="max-w-2xl mb-space-lg">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary-container font-semibold block mb-1">Grant Allocator FAQ</span>
+<h2 class="font-headline-md text-headline-md text-text-primary">Frequently Addressed Questions</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<div class="bg-surface-lowest p-space-lg shadow-sm">
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-space-xs">
+            How are fellowship candidates vetted?
+          </h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+            Candidates undergo a three-stage filter: proof-of-work code sample review, an algorithmic coding assessment, and an architectural interview with a guild core contributor. Acceptance rates across recent cohorts average 6.4%.
+          </p>
+</div>
+<div class="bg-surface-lowest p-space-lg shadow-sm">
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-space-xs">
+            Can our foundation provide direct technical mentors?
+          </h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+            Yes. Cohort tracks welcome your DevRel engineers and core protocol contributors for guest lectures, office hours, and PR reviews. We organize scheduling and ensure asynchronous recordings for all time zones.
+          </p>
+</div>
+<div class="bg-surface-lowest p-space-lg shadow-sm">
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-space-xs">
+            Can we fund hacker houses in specific regions only?
+          </h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+            Absolutely. You may sponsor dedicated houses specifically in Nairobi, Lagos, Accra, or Kigali, or propose a nomadic multi-city sprint depending on where your protocol sees highest developer concentration.
+          </p>
+</div>
+<div class="bg-surface-lowest p-space-lg shadow-sm">
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-space-xs">
+            What currencies and payment rails do you accept?
+          </h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+            We accept standard corporate wire transfers (USD/EUR) as well as on-chain stablecoin grants (USDC/USDT on Ethereum, Arbitrum, Optimism, Base, and Solana) via audited multi-signature treasuries.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Logic -->
+<script>
+    function selectTrack(btn, trackName) {
+      document.querySelectorAll('.track-btn').forEach(b => {
+        b.classList.remove('bg-primary-container', 'text-on-primary');
+        b.classList.add('bg-surface-container-low', 'text-text-primary');
+      });
+      btn.classList.remove('bg-surface-container-low', 'text-text-primary');
+      btn.classList.add('bg-primary-container', 'text-on-primary');
+      document.getElementById('selectedTrackInput').value = trackName;
+    }
+
+    function selectBudget(btn, budgetVal) {
+      document.querySelectorAll('.budget-btn').forEach(b => {
+        b.classList.remove('bg-primary-container', 'text-on-primary');
+        b.classList.add('bg-surface-container-low', 'text-text-primary');
+      });
+      btn.classList.remove('bg-surface-container-low', 'text-text-primary');
+      btn.classList.add('bg-primary-container', 'text-on-primary');
+      document.getElementById('selectedBudgetInput').value = budgetVal;
+    }
+
+    function prefillTrack(trackName) {
+      document.getElementById('selectedTrackInput').value = trackName;
+      const buttons = document.querySelectorAll('.track-btn');
+      buttons.forEach(b => {
+        if (b.innerText.includes(trackName)) {
+          b.classList.remove('bg-surface-container-low', 'text-text-primary');
+          b.classList.add('bg-primary-container', 'text-on-primary');
+        } else {
+          b.classList.remove('bg-primary-container', 'text-on-primary');
+          b.classList.add('bg-surface-container-low', 'text-text-primary');
+        }
+      });
+      const formEl = document.getElementById('partner-form');
+      if (formEl) {
+        formEl.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const submitBtn = document.getElementById('submit-btn');
+      const statusText = document.getElementById('form-status-text');
+      const statusSubtext = document.getElementById('form-status-subtext');
+      const successBanner = document.getElementById('form-success-banner');
+
+      // Set Submitting State
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Transmitting Details...";
+      statusText.innerText = "State: Submitting...";
+      statusSubtext.innerText = "Routing encryption handshake with ecosystem grants desk.";
+
+      setTimeout(() => {
+        submitBtn.innerText = "Inquiry Logged ✓";
+        submitBtn.classList.remove('bg-primary-container');
+        submitBtn.classList.add('bg-secondary');
+        statusText.innerText = "State: Success (Dispatched)";
+        statusSubtext.innerText = "Direct ticket assigned. Response due within 48h.";
+        successBanner.classList.remove('hidden');
+      }, 1200);
+    }
+  </script>
+</div></main><footer class="w-full bg-surface border-t border-border-hairline mt-margin"><div class="w-full max-w-7xl mx-auto px-gutter py-space-xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl pb-space-xl border-b border-border-hairline"><div class="md:col-span-5 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><div class="w-6 h-6 border border-border-hairline bg-surface-lowest flex items-center justify-center overflow-hidden"><img alt="Umojaverse" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VN2N_br3WMdhqhlYLXWyc18qBdBSIskoVziaHmbHtUfj6RLEjOiY05eqrIcadm_EKeu3lnUhxLdWDmokW_B562ZR2Z8LNQZ4fU1sNe0gZbkEn1k5lGd7Tbw3gtAF9VQSWIkMD2nK5SJXN38vfEKw9t9wjYYtmTX-ERQzPYw5ARJgcigdzLLys05PhQv0IVxldAEMlpBazdw7fvNi70yDrwDmuMRtwP_TjTZ5wo9InMjKmdjGteJ9uNvMFfj_O3BZnWCzOpNMYRvw"/></div><span class="font-headline-sm text-headline-sm tracking-tight text-text-primary font-bold">UMOJAVERSE</span></div><p class="font-body-md text-body-md text-text-secondary max-w-md leading-relaxed">Africa's builders. Learning, collaborating, and creating technology together across the continent.</p><div class="flex items-center gap-space-xs pt-space-xs"><span class="w-2 h-2 bg-secondary-container inline-block"></span><p class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Active community hubs in Nairobi, Lagos, Accra, Kigali, and remote across Africa.</p></div></div><div class="md:col-span-2 flex flex-col gap-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-widest text-text-primary font-semibold">Directory</span><ul class="flex flex-col gap-space-xs pt-space-xs"><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="programs" href="#">Programs</a></li><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="projects" href="#">Projects</a></li><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="about" href="#">About</a></li><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="partners" href="#">Partners</a></li><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="join-the-community" href="#">Join Us</a></li></ul></div><div class="md:col-span-3 flex flex-col gap-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-widest text-text-primary font-semibold">Resources</span><ul class="flex flex-col gap-space-xs pt-space-xs"><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="code-of-conduct" href="#">Code of Conduct</a></li><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="community-guidelines" href="#">Community Guidelines</a></li><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="fellowship-faq" href="#">Fellowship FAQ</a></li><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="brand-kit" href="#">Brand Kit</a></li></ul></div><div class="md:col-span-2 flex flex-col gap-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-widest text-text-primary font-semibold">Connect</span><ul class="flex flex-col gap-space-xs pt-space-xs"><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="connect" href="#">GitHub</a></li><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="connect" href="#">X / Twitter</a></li><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="connect" href="#">Discord</a></li><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="connect" href="#">Newsletter</a></li></ul></div></div><div class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm"><p class="font-body-sm text-body-sm text-text-muted">© 2025 Umojaverse Collective. Sovereign Digital Infrastructure.</p><div class="flex items-center gap-space-md"><a class="font-body-sm text-body-sm text-text-muted hover:text-text-primary transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><span class="text-border-hairline">/</span><a class="font-body-sm text-body-sm text-text-muted hover:text-text-primary transition-colors" data-path="terms-of-service" href="#">Terms of Service</a></div></div></div></footer></body></html>

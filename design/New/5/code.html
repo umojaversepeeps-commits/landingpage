@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary": "#735b11", "on-primary-fixed-variant": "#602d8a", "secondary": "#00658d", "inverse-surface": "#303033", "on-tertiary-fixed": "#241a00", "secondary-fixed": "#c6e7ff", "inverse-primary": "#e0b6ff", "surface-bright": "#faf9fb", "surface-variant": "#e3e2e5", "surface-container": "#efedf0", "on-secondary-fixed": "#001e2d", "primary-fixed-dim": "#e0b6ff", "on-surface": "#1b1c1e", "on-background": "#1b1c1e", "on-primary-fixed": "#2d004e", "error": "#ba1a1a", "on-tertiary-container": "#503d00", "surface-container-lowest": "#ffffff", "text-primary": "#0D0E10", "outline-variant": "#cec3d2", "secondary-container": "#55c3ff", "secondary-fixed-dim": "#82cfff", "surface-container-high": "#e9e7ea", "on-error-container": "#93000a", "on-primary-container": "#dcafff", "on-error": "#ffffff", "surface-tint": "#7a47a4", "on-tertiary-fixed-variant": "#584400", "primary": "#501b7a", "surface-container-low": "#f5f3f6", "outline": "#7d7481", "on-secondary-fixed-variant": "#004c6b", "surface-container-highest": "#e3e2e5", "tertiary-fixed": "#ffdf90", "on-secondary-container": "#004f6f", "primary-container": "#693693", "on-secondary": "#ffffff", "text-secondary": "#4B5563", "error-container": "#ffdad6", "text-muted": "#9CA3AF", "surface": "#FCFCFC", "on-primary": "#ffffff", "on-tertiary": "#ffffff", "primary-fixed": "#f2daff", "surface-dim": "#dbd9dc", "tertiary-container": "#c6a858", "tertiary-fixed-dim": "#e3c370", "on-surface-variant": "#4c4450", "surface-lowest": "#FFFFFF", "border-hairline": "#E5E7EB", "background": "#faf9fb", "inverse-on-surface": "#f2f0f3" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "gutter": "1.5rem", "margin-mobile": "1.25rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "gutter-mobile": "1rem", "space-md": "1rem", "space-xl": "2.5rem", "margin": "3rem" }, "fontFamily": { "body-md": ["Plus Jakarta Sans"], "display-xl-mobile": ["Space Grotesk"], "headline-lg": ["Space Grotesk"], "body-lg": ["Plus Jakarta Sans"], "headline-sm": ["Space Grotesk"], "headline-md": ["Space Grotesk"], "display-lg": ["Space Grotesk"], "display-lg-mobile": ["Space Grotesk"], "display-xl": ["Space Grotesk"], "label-md": ["Space Grotesk"], "body-sm": ["Plus Jakarta Sans"], "label-sm": ["Space Grotesk"], "label-lg": ["Space Grotesk"] }, "fontSize": { "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "display-xl-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "display-lg": ["48px", { "lineHeight": "54px", "letterSpacing": "-0.025em", "fontWeight": "600" }], "display-lg-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display-xl": ["60px", { "lineHeight": "68px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.05em", "fontWeight": "600" }] } } } };</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&family=Space+Grotesk:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-text-primary min-h-screen selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-border-hairline"><div class="h-16 w-full max-w-7xl mx-auto px-gutter flex items-center justify-between"><div class="flex items-center gap-space-md"><a class="flex items-center gap-space-sm group" data-path="home" href="#"><div class="w-8 h-8 rounded-none border border-border-hairline flex items-center justify-center bg-surface-lowest overflow-hidden"><img alt="Umojaverse Emblem" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VN2N_br3WMdhqhlYLXWyc18qBdBSIskoVziaHmbHtUfj6RLEjOiY05eqrIcadm_EKeu3lnUhxLdWDmokW_B562ZR2Z8LNQZ4fU1sNe0gZbkEn1k5lGd7Tbw3gtAF9VQSWIkMD2nK5SJXN38vfEKw9t9wjYYtmTX-ERQzPYw5ARJgcigdzLLys05PhQv0IVxldAEMlpBazdw7fvNi70yDrwDmuMRtwP_TjTZ5wo9InMjKmdjGteJ9uNvMFfj_O3BZnWCzOpNMYRvw"/></div><span class="font-headline-sm text-headline-sm tracking-tight text-text-primary font-bold">UMOJAVERSE</span></a><div class="hidden lg:flex items-center gap-space-xs pl-space-sm"><span class="w-1.5 h-1.5 bg-secondary-container inline-block"></span><span class="font-label-sm text-label-sm uppercase text-text-secondary tracking-widest">Builder Collective</span></div></div><nav class="hidden md:flex items-center gap-space-lg h-full" data-active-classes="text-primary-container font-semibold border-b-2 border-primary-container"><a class="h-full flex items-center font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-text-primary transition-colors" data-path="home" href="#">Home</a><a class="h-full flex items-center font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-text-primary transition-colors" data-path="programs" href="#">Programs</a><a aria-current="page" class="h-full flex items-center uppercase tracking-wider transition-colors text-primary-container font-semibold border-b-2 border-primary-container" data-path="projects" href="#">Projects</a><a class="h-full flex items-center font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-text-primary transition-colors" data-path="about" href="#">About</a><a class="h-full flex items-center font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-text-primary transition-colors" data-path="partners" href="#">Partners</a></nav><div class="flex items-center gap-space-md"><a class="relative inline-flex items-center justify-center px-space-md py-2 bg-primary-container text-on-primary font-label-md text-label-md tracking-wider uppercase hover:bg-text-primary transition-colors rounded-none border border-primary-container" data-path="join-the-community" href="#"><span class="relative z-10">Join the Community</span></a><div class="pl-space-xs border-l border-border-hairline"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border-hairline" src="https://lh3.googleusercontent.com/aida/AEtjO1VN2N_br3WMdhqhlYLXWyc18qBdBSIskoVziaHmbHtUfj6RLEjOiY05eqrIcadm_EKeu3lnUhxLdWDmokW_B562ZR2Z8LNQZ4fU1sNe0gZbkEn1k5lGd7Tbw3gtAF9VQSWIkMD2nK5SJXN38vfEKw9t9wjYYtmTX-ERQzPYw5ARJgcigdzLLys05PhQv0IVxldAEMlpBazdw7fvNi70yDrwDmuMRtwP_TjTZ5wo9InMjKmdjGteJ9uNvMFfj_O3BZnWCzOpNMYRvw"/></div></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<section class="w-full max-w-7xl mx-auto px-gutter py-space-xl">
+<div class="flex flex-col gap-space-sm pb-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 bg-secondary-container inline-block"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-text-secondary">[02] PRODUCTION & UTILITY</span>
+</div>
+<h1 class="font-display-xl text-display-xl text-text-primary tracking-tight max-w-4xl">
+        Useful software born from community collaboration.
+      </h1>
+<p class="font-body-lg text-body-lg text-text-secondary max-w-3xl pt-space-xs leading-relaxed">
+        Explore verified open-source protocols, mobile money bridges, and public goods engineered by Umojaverse guild fellows and working groups across the continent.
+      </p>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-md pt-space-md pb-space-lg">
+<div class="flex flex-wrap items-center gap-space-xs">
+<button class="px-space-md py-2 bg-text-primary text-surface-lowest font-label-md text-label-md uppercase tracking-wider">
+          All Projects
+        </button>
+<button class="px-space-md py-2 bg-surface-container-low text-text-secondary hover:text-text-primary hover:bg-surface-container font-label-md text-label-md uppercase tracking-wider transition-colors">
+          Public Goods
+        </button>
+<button class="px-space-md py-2 bg-surface-container-low text-text-secondary hover:text-text-primary hover:bg-surface-container font-label-md text-label-md uppercase tracking-wider transition-colors">
+          Fintech & USSD
+        </button>
+<button class="px-space-md py-2 bg-surface-container-low text-text-secondary hover:text-text-primary hover:bg-surface-container font-label-md text-label-md uppercase tracking-wider transition-colors">
+          Identity & ZK
+        </button>
+<button class="px-space-md py-2 bg-surface-container-low text-text-secondary hover:text-text-primary hover:bg-surface-container font-label-md text-label-md uppercase tracking-wider transition-colors">
+          Developer Tooling
+        </button>
+</div>
+<div class="flex items-center gap-space-sm text-text-muted font-label-sm text-label-sm tracking-wider uppercase">
+<span class="inline-block w-2 h-2 bg-secondary-container"></span>
+<span>Directory Sync: Verified Q2 2025</span>
+</div>
+</div>
+</section>
+<section class="w-full max-w-7xl mx-auto px-gutter pb-space-xl">
+<div class="bg-surface-lowest p-space-lg md:p-space-xl shadow-sm relative overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="px-2.5 py-1 bg-primary-container text-surface-lowest font-label-sm text-label-sm uppercase tracking-widest font-semibold">
+              STAGE 02: TESTNET PROTOTYPE
+            </span>
+<span class="px-2.5 py-1 bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase tracking-wider">
+              Layer-2 USSD Settlement
+            </span>
+<span class="text-text-muted font-label-sm text-label-sm uppercase tracking-wider">
+              Protocol ID #UG-804
+            </span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">
+            AfriPay Rollup
+          </h2>
+<p class="font-body-md text-body-md text-text-secondary">
+            Open-source protocol enabling cellular base-band settlement. Built by Kampala & Lagos Guild Working Group (Guild Lead: Kwame A., Amina O.).
+          </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md pt-space-xs">
+<div class="bg-surface-container-low p-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted block mb-space-xs">Structural Problem</span>
+<p class="font-body-sm text-body-sm text-text-secondary">
+                Cross-border payments across East and West Africa face exorbitant remittance fees (6–10%) and frequent cellular telecom gateway downtime on 2G infrastructure.
+              </p>
+</div>
+<div class="bg-surface-container-low p-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted block mb-space-xs">Sovereign Architecture</span>
+<p class="font-body-sm text-body-sm text-text-secondary">
+                A lightweight USSD client coordinating peer-to-peer state channels on Ethereum Layer-2, designed to execute cryptographic transactions over intermittent GSM networks.
+              </p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-md pt-space-sm">
+<a class="inline-flex items-center gap-space-xs px-space-md py-2.5 bg-primary-container text-surface-lowest font-label-md text-label-md uppercase tracking-wider hover:bg-text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-base">code</span>
+<span>GitHub Repo (MIT)</span>
+</a>
+<a class="inline-flex items-center gap-space-xs px-space-md py-2.5 bg-surface-container text-text-primary font-label-md text-label-md uppercase tracking-wider hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined text-base">play_arrow</span>
+<span>Testnet Demo Interface</span>
+</a>
+<a class="inline-flex items-center gap-space-xs px-space-md py-2.5 bg-surface-container text-text-secondary hover:text-text-primary font-label-md text-label-md uppercase tracking-wider transition-colors" href="#">
+<span class="material-symbols-outlined text-base">description</span>
+<span>Monograph PDF</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<div class="relative overflow-hidden bg-surface-container shadow-sm">
+<img class="w-full h-64 object-cover" data-alt="African software engineering team collaborating in an open-plan Nairobi tech space, viewing live Layer-2 transaction metrics and terminal code displays on large monitors under ambient warm ceiling lights with architectural steel accents, captured in clean contemporary documentary photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnHU8F9vF-8bD8c2hqaoKeSzZRc5V3Hd8SNtAfK8GVhF7Yg_-sInICZPWt3rIh8NTxaid6nxNswsUIZ2FSKbYA86A45enMc_nbIlXD2hT_m6Ca2C67z0eS-TXHaHjpCydygtoUlHuRdOVKeAgCl_2GCbstBaqA7iPo3mdtnHcVnylJLZieajGZfAC1cfRfn8spytTUrCW79cVI9iDl5_v-tmykxBG317SqdXi-6uvMyWPLXSmH_7DW"/>
+<div class="p-space-md bg-surface-lowest flex flex-col gap-space-xs">
+<div class="flex justify-between items-center text-text-muted font-label-sm text-label-sm uppercase">
+<span>Verification State</span>
+<span class="text-secondary font-semibold">GSM Node Active</span>
+</div>
+<div class="w-full bg-surface-container h-2 relative overflow-hidden">
+<div class="bg-secondary-container h-full w-3/4"></div>
+</div>
+<div class="flex justify-between items-center pt-1 font-body-sm text-body-sm text-text-secondary">
+<span>Intermittent Latency: 1.2s</span>
+<span class="font-label-sm text-label-sm text-text-primary">EVM State Channel #04</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Working Group Leads</span>
+<div class="flex items-center gap-space-md pt-space-xs">
+<div class="flex -space-x-2 overflow-hidden">
+<img class="inline-block h-8 w-8 rounded-full object-cover ring-2 ring-surface-lowest" data-alt="Portrait of Kwame Annan, lead distributed systems engineer in Kampala, natural lighting, high resolution studio documentary portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDzUGgcxAgjrxnUJn48RqqV9lQsNFV_dKhtaiG0QRj4OrQUrAVGtXLqWJNrPaXtwg38WoCTa2UI_x4bgp3Y4DLStQJy4G1yHXR0BFnERZGvYzp33aOBzNCqFcBTX9kqdKnaDXBpKqERUemMLCHaZ4qbKGdN5gDR_PjnjWXfQsPhO-0r3w9uFxZfGJtE8n4WMBGAwszBfIFHpqV09fBMrtOI2BX85d2cZ3Rdpk6DuCsHhO4sw_zjAK4"/>
+<img class="inline-block h-8 w-8 rounded-full object-cover ring-2 ring-surface-lowest" data-alt="Portrait of Amina Osei, cryptography and smart contract developer in Lagos, confident smile, clean editorial portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPjJaBPtrrK8xhg9vvepIqcbv6MGC8M00qj9jTTA_G7AIyxEpS2ow4PL7CiEWUUnoyLJhtCW0XSMjk4h15m00C0IkROOwu-5ZIFN0HXCJ3CNyUGxm6IUInw-GqHe6OCKzLS21wOtYNyVP1AtdptDsTabZS5t7hZqNc-dzBwQNHkhBFcJ7T21B-dh0zrBoibUo2ODPJK_v4Ib2_22_wTOmGwNU-WGU56cShdLUhG9OLvDyGk5SEGNVo"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-primary">Kwame Annan & Amina Osei</span>
+<span class="font-body-sm text-body-sm text-text-muted">Kampala • Lagos Guild Guildlines</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full max-w-7xl mx-auto px-gutter pb-space-xl">
+<div class="flex items-center justify-between pb-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-text-muted block">REGISTRY LEDGER</span>
+<h3 class="font-headline-md text-headline-md text-text-primary tracking-tight">Active Fellowships & Working Groups</h3>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary hidden sm:inline-block">
+        3 VERIFIED / 1 PEER REVIEW
+      </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-lg">
+<div class="md:col-span-7 bg-surface-lowest p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<span class="px-2 py-0.5 bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+              PROTOTYPE
+            </span>
+<span class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider">
+              Track: Agriculture & Oracles
+            </span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h4 class="font-headline-md text-headline-md text-text-primary tracking-tight">Kilimo Data DAO</h4>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+              Hyper-local micro-weather oracle feeds triggering automated crop parametric insurance for smallholder farmers across Kenya and Rwanda. Connects IoT ground sensors directly to smart escrow contracts.
+            </p>
+</div>
+<div class="bg-surface-container-low p-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted block mb-1">Guild Working Group</span>
+<p class="font-body-sm text-body-sm text-text-primary">
+              Nairobi Hardware & Smart Contract Working Group (Led by Wanjiku N., Peter M.)
+            </p>
+</div>
+<div class="flex flex-wrap gap-space-xs pt-space-xs">
+<span class="px-2 py-1 bg-surface-container text-text-secondary font-label-sm text-label-sm uppercase">Solidity</span>
+<span class="px-2 py-1 bg-surface-container text-text-secondary font-label-sm text-label-sm uppercase">Chainlink Oracles</span>
+<span class="px-2 py-1 bg-surface-container text-text-secondary font-label-sm text-label-sm uppercase">Base L2</span>
+<span class="px-2 py-1 bg-surface-container text-text-secondary font-label-sm text-label-sm uppercase">LoRaWAN Sensors</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-lg mt-space-md">
+<div class="flex items-center gap-space-md">
+<a class="font-label-md text-label-md uppercase tracking-wider text-primary-container hover:text-text-primary font-semibold transition-colors inline-flex items-center gap-1" href="#">
+<span>View Case Study</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-text-secondary hover:text-text-primary transition-colors" href="#">
+              Code Repo →
+            </a>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted">License: Apache 2.0</span>
+</div>
+</div>
+<div class="md:col-span-5 bg-surface-lowest p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<span class="px-2 py-0.5 bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+              EXPERIMENTAL AUDIT
+            </span>
+<span class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider">
+              Fintech Protocol
+            </span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h4 class="font-headline-sm text-headline-sm text-text-primary tracking-tight">Sika Wallet Bridge</h4>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+              Non-custodial micro-savings and automated yield routing connecting M-Pesa, MTN Mobile Money, and sovereign local currency stablecoins with zero front-end custody.
+            </p>
+</div>
+<div class="bg-surface-container-low p-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted block mb-1">Contributors</span>
+<p class="font-body-sm text-body-sm text-text-primary">
+              Accra & Kigali Distributed Systems Fellowships
+            </p>
+</div>
+<div class="flex flex-wrap gap-space-xs pt-space-xs">
+<span class="px-2 py-1 bg-surface-container text-text-secondary font-label-sm text-label-sm uppercase">Rust</span>
+<span class="px-2 py-1 bg-surface-container text-text-secondary font-label-sm text-label-sm uppercase">Solana</span>
+<span class="px-2 py-1 bg-surface-container text-text-secondary font-label-sm text-label-sm uppercase">USSD API Gateway</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-lg mt-space-md">
+<a class="font-label-md text-label-md uppercase tracking-wider text-primary-container hover:text-text-primary font-semibold transition-colors inline-flex items-center gap-1" href="#">
+<span>View Details</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+<span class="font-label-sm text-label-sm text-text-muted">Security Audit: In Progress</span>
+</div>
+</div>
+<div class="md:col-span-5 bg-surface-lowest p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<span class="px-2 py-0.5 bg-surface-container text-text-secondary font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+              RESEARCH SPECIFICATION
+            </span>
+<span class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider">
+              Identity & ZK
+            </span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h4 class="font-headline-sm text-headline-sm text-text-primary tracking-tight">Sovereign ID (SoviID)</h4>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+              Zero-knowledge proof verification architecture designed for African developer talent credentials, ensuring verifiable proof of work and open-source contribution history without revealing real-world private identity tokens.
+            </p>
+</div>
+<div class="bg-surface-container-low p-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted block mb-1">Stewardship</span>
+<p class="font-body-sm text-body-sm text-text-primary">
+              Umojaverse Cryptography Research Cohort #03
+            </p>
+</div>
+<div class="flex flex-wrap gap-space-xs pt-space-xs">
+<span class="px-2 py-1 bg-surface-container text-text-secondary font-label-sm text-label-sm uppercase">ZK-SNARKs</span>
+<span class="px-2 py-1 bg-surface-container text-text-secondary font-label-sm text-label-sm uppercase">Circom</span>
+<span class="px-2 py-1 bg-surface-container text-text-secondary font-label-sm text-label-sm uppercase">EAS Attestations</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-lg mt-space-md">
+<a class="font-label-md text-label-md uppercase tracking-wider text-primary-container hover:text-text-primary font-semibold transition-colors inline-flex items-center gap-1" href="#">
+<span>Read Spec</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+<span class="font-label-sm text-label-sm text-text-muted">Draft v0.4.1</span>
+</div>
+</div>
+<div class="md:col-span-7 bg-surface-container-low p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<span class="px-2 py-0.5 bg-surface-container-high text-text-muted font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+              PEER REVIEW QUEUE
+            </span>
+<span class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider">
+              Submission #105
+            </span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 bg-secondary-container animate-pulse"></span>
+<h4 class="font-headline-sm text-headline-sm text-text-primary tracking-tight">
+                MeshGSM Offline Relayer
+              </h4>
+</div>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+              Decentralized localized packet routing via LoRa nodes to forward smart contract transactions during grid power cuts and fiber outages. Currently undergoing technical review by the Engineering Advisory Committee.
+            </p>
+</div>
+<div class="p-space-md bg-surface-lowest">
+<div class="flex items-center justify-between text-text-muted font-label-sm text-label-sm uppercase mb-1">
+<span>Peer Consensus Review Stage</span>
+<span class="text-text-primary font-semibold">2 of 3 Signatures</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 overflow-hidden">
+<div class="bg-primary-container h-full w-2/3"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-lg mt-space-md">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">
+            Evaluating Team: Addis Ababa & Nairobi Guilds
+          </span>
+<span class="font-label-sm text-label-sm text-primary-container font-semibold uppercase tracking-wider">
+            Review Concludes May 2025
+          </span>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full max-w-7xl mx-auto px-gutter pb-space-xl">
+<div class="bg-surface-lowest p-space-lg md:p-space-xl shadow-sm">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<div class="lg:col-span-4 flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 bg-primary-container inline-block"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-text-secondary font-semibold">
+              STEWARDSHIP ETHOS
+            </span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">
+            How we measure real impact.
+          </h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+            Inspired by community-first traditions and rigorous protocol craftsmanship. We value functional code deployed over speculative hype.
+          </p>
+</div>
+<div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+<div class="bg-surface-container-low p-space-md flex flex-col justify-between h-full">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary-container uppercase font-bold tracking-wider">
+                01 • CODE SHIPPED
+              </span>
+<h5 class="font-headline-sm text-headline-sm text-text-primary">Production Utility</h5>
+<p class="font-body-sm text-body-sm text-text-secondary pt-space-xs">
+                We measure software by real-world uptime, low transaction overhead, and direct applicability to African infrastructure constraints.
+              </p>
+</div>
+<div class="pt-space-md font-label-sm text-label-sm text-text-muted uppercase">
+              Metric: Verifiable Deployments
+            </div>
+</div>
+<div class="bg-surface-container-low p-space-md flex flex-col justify-between h-full">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary-container uppercase font-bold tracking-wider">
+                02 • PUBLIC GOODS
+              </span>
+<h5 class="font-headline-sm text-headline-sm text-text-primary">Open Attribution</h5>
+<p class="font-body-sm text-body-sm text-text-secondary pt-space-xs">
+                Every line of contract code and documentation is licensed permissively under MIT or Apache 2.0 with permanent team co-attribution.
+              </p>
+</div>
+<div class="pt-space-md font-label-sm text-label-sm text-text-muted uppercase">
+              Metric: 100% Open Source
+            </div>
+</div>
+<div class="bg-surface-container-low p-space-md flex flex-col justify-between h-full">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary-container uppercase font-bold tracking-wider">
+                03 • SUSTAINABILITY
+              </span>
+<h5 class="font-headline-sm text-headline-sm text-text-primary">Builder Equity</h5>
+<p class="font-body-sm text-body-sm text-text-secondary pt-space-xs">
+                Fellows gain direct grant patronage, institutional code reviews, and direct pathways to venture stewardship or long-term foundation maintenance.
+              </p>
+</div>
+<div class="pt-space-md font-label-sm text-label-sm text-text-muted uppercase">
+              Metric: Fellowship Grants
+            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full max-w-7xl mx-auto px-gutter pb-space-xl">
+<div class="bg-text-primary text-surface-lowest p-space-lg md:p-space-xl relative overflow-hidden shadow-sm">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<div class="lg:col-span-8 flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 bg-secondary-container inline-block"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-text-muted">
+              OPEN INGESTION • REGISTRY PIPELINE
+            </span>
+</div>
+<h2 class="font-display-lg text-display-lg text-surface-lowest tracking-tight">
+            Have an open-source project or thesis?
+          </h2>
+<p class="font-body-lg text-body-lg text-surface-variant max-w-2xl leading-relaxed">
+            Submit your work to the Umojaverse registry to receive peer code reviews, contributor matching from fellowship working groups, and micro-grant backing.
+          </p>
+</div>
+<div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-space-sm lg:items-end justify-start">
+<a class="inline-flex items-center justify-center px-space-xl py-3 bg-primary-container text-surface-lowest font-label-md text-label-md uppercase tracking-wider hover:bg-surface-lowest hover:text-text-primary transition-colors text-center" href="#">
+<span>Submit a Project</span>
+</a>
+<a class="inline-flex items-center justify-center px-space-md py-3 bg-inverse-surface text-surface-lowest font-label-md text-label-md uppercase tracking-wider hover:bg-surface-variant hover:text-text-primary transition-colors text-center" href="#">
+<span>Review Guidelines</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface border-t border-border-hairline mt-margin"><div class="w-full max-w-7xl mx-auto px-gutter py-space-xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl pb-space-xl border-b border-border-hairline"><div class="md:col-span-5 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><div class="w-6 h-6 border border-border-hairline bg-surface-lowest flex items-center justify-center overflow-hidden"><img alt="Umojaverse" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VN2N_br3WMdhqhlYLXWyc18qBdBSIskoVziaHmbHtUfj6RLEjOiY05eqrIcadm_EKeu3lnUhxLdWDmokW_B562ZR2Z8LNQZ4fU1sNe0gZbkEn1k5lGd7Tbw3gtAF9VQSWIkMD2nK5SJXN38vfEKw9t9wjYYtmTX-ERQzPYw5ARJgcigdzLLys05PhQv0IVxldAEMlpBazdw7fvNi70yDrwDmuMRtwP_TjTZ5wo9InMjKmdjGteJ9uNvMFfj_O3BZnWCzOpNMYRvw"/></div><span class="font-headline-sm text-headline-sm tracking-tight text-text-primary font-bold">UMOJAVERSE</span></div><p class="font-body-md text-body-md text-text-secondary max-w-md leading-relaxed">Africa's builders. Learning, collaborating, and creating technology together across the continent.</p><div class="flex items-center gap-space-xs pt-space-xs"><span class="w-2 h-2 bg-secondary-container inline-block"></span><p class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Active community hubs in Nairobi, Lagos, Accra, Kigali, and remote across Africa.</p></div></div><div class="md:col-span-2 flex flex-col gap-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-widest text-text-primary font-semibold">Directory</span><ul class="flex flex-col gap-space-xs pt-space-xs"><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="programs" href="#">Programs</a></li><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="projects" href="#">Projects</a></li><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="about" href="#">About</a></li><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="partners" href="#">Partners</a></li><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="join-the-community" href="#">Join Us</a></li></ul></div><div class="md:col-span-3 flex flex-col gap-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-widest text-text-primary font-semibold">Resources</span><ul class="flex flex-col gap-space-xs pt-space-xs"><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="code-of-conduct" href="#">Code of Conduct</a></li><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="community-guidelines" href="#">Community Guidelines</a></li><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="fellowship-faq" href="#">Fellowship FAQ</a></li><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="brand-kit" href="#">Brand Kit</a></li></ul></div><div class="md:col-span-2 flex flex-col gap-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-widest text-text-primary font-semibold">Connect</span><ul class="flex flex-col gap-space-xs pt-space-xs"><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="connect" href="#">GitHub</a></li><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="connect" href="#">X / Twitter</a></li><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="connect" href="#">Discord</a></li><li class="h-6 flex items-center"><a class="font-body-sm text-body-sm text-text-secondary hover:text-primary-container transition-colors" data-path="connect" href="#">Newsletter</a></li></ul></div></div><div class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm"><p class="font-body-sm text-body-sm text-text-muted">© 2025 Umojaverse Collective. Sovereign Digital Infrastructure.</p><div class="flex items-center gap-space-md"><a class="font-body-sm text-body-sm text-text-muted hover:text-text-primary transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><span class="text-border-hairline">/</span><a class="font-body-sm text-body-sm text-text-muted hover:text-text-primary transition-colors" data-path="terms-of-service" href="#">Terms of Service</a></div></div></div></footer></body></html>
