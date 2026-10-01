@@ -17,7 +17,7 @@ export default function AboutPage() {
   return (
     <>
       <PageIntro
-        label="Our story"
+        label="About"
         title={
           <>
             Different paths.

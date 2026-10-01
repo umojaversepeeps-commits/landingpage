@@ -222,7 +222,7 @@ export function PartnerCallout() {
           </div>
           <div className="callout-actions">
             <ButtonLink href="/partners" arrow>
-              Partner with us
+              Get in touch
             </ButtonLink>
           </div>
         </div>

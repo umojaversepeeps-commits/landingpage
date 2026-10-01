@@ -18,7 +18,7 @@ export default function ProjectsPage() {
   return (
     <>
       <PageIntro
-        label="Built together"
+        label="Projects"
         title={
           <>
             Shared ideas.

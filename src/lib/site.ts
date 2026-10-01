@@ -27,7 +27,7 @@ export const sources = {
 export type Program = {
   slug: string;
   title: string;
-  category: "Campus tour" | "Bootcamp" | "Build sprint";
+  category: "Campus tour" | "Build sprint";
   status: "Past event";
   location: string;
   period: string;
@@ -76,24 +76,5 @@ export const programs: Program[] = [
     ],
     source: sources.kabarak,
     sourceLabel: "Read Kabarak’s event recap",
-  },
-  {
-    slug: "arbitrum-pulse-ethiopia",
-    title: "Arbitrum Pulse Bootcamp",
-    category: "Bootcamp",
-    status: "Past event",
-    location: "Addis Ababa · Ethiopia",
-    period: "Past edition",
-    description:
-      "An introduction to the Arbitrum ecosystem, with practical workshops, conversations, and collaborative exploration of local blockchain applications.",
-    overview:
-      "The Ethiopia edition of Arbitrum Pulse brought developers and blockchain-curious participants together in Addis Ababa. The event listing describes workshops covering Arbitrum, Stylus, and Orbit, alongside discussions and collaborative activities.",
-    highlights: [
-      "Explore the Arbitrum ecosystem and its developer tools.",
-      "Meet other builders and discuss locally relevant applications.",
-      "Learn through workshops, conversations, and collaborative activities.",
-    ],
-    source: sources.ethiopia,
-    sourceLabel: "View the original event listing",
   },
 ];

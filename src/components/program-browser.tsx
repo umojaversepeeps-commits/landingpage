@@ -8,7 +8,6 @@ import Link from "next/link";
 const filters = [
   "All programs",
   "Campus tours",
-  "Bootcamps",
   "Upcoming",
 ] as const;
 type Filter = (typeof filters)[number];
@@ -18,8 +17,7 @@ export function ProgramBrowser() {
   const visible = programs.filter(
     (p) =>
       filter === "All programs" ||
-      (filter === "Campus tours" && p.category === "Campus tour") ||
-      (filter === "Bootcamps" && p.category === "Bootcamp"),
+      (filter === "Campus tours" && p.category === "Campus tour")
   );
   return (
     <div>

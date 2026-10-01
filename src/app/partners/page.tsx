@@ -13,7 +13,7 @@ export default function PartnersPage() {
   return (
     <>
       <PageIntro
-        label="Partner with us"
+        label="Work with us"
         title={
           <>
             Good people.

@@ -17,7 +17,7 @@ export default function ProgramsPage() {
   return (
     <>
       <PageIntro
-        label="Programs & gatherings"
+        label="Programs"
         title={
           <>
             Less watching.
