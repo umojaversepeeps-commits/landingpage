@@ -43,6 +43,20 @@ access. Editors can manage publication, dates, Markdown, video links, and cover
 images. Image uploads are limited to 4MB to fit Vercel's request-size limit.
 Public content falls back to the bundled seed data when Supabase is unavailable.
 
+Administrators sign in at `/admin/login`. To change an administrator's email,
+update the existing user in Supabase Auth and the `ADMIN_EMAILS` value in both
+development and Vercel, then redeploy so the allowlist takes effect.
+
+The private password-reset form is at `/admin/reset-password`. An account
+operator can use Supabase's server-side `auth.admin.generateLink` with type
+`recovery` for the administrator's email, then deliver a link in the format
+`https://umojaverse.xyz/admin/reset-password#token_hash=<hashed_token>`. Never
+commit or log the resulting token. This generation method does not send email.
+The administrator chooses a new password in the form and signs in again after
+the change. Opening the page without a valid recovery link cannot change a
+password. Recovery sessions use separate, HttpOnly cookies scoped to the reset
+page and expire after 15 minutes; they do not grant dashboard access.
+
 ## Content and contact
 
 Edit `src/lib/site.ts` for shared information, program records, and source URLs. Page content lives under `src/app/`.
@@ -74,6 +88,7 @@ npm run lint
 npm run build
 npm run test:theme
 npm run test:content
+npm run test:password-reset
 npx playwright install chromium
 npm run test:e2e
 ```
@@ -81,6 +96,11 @@ npm run test:e2e
 Browser tests cover the main routes, mobile navigation, program filtering, enquiry drafts, responsive overflow, and a missing program. Tests start the production server, so run the build first. Set `PLAYWRIGHT_CHROMIUM_EXECUTABLE` to use an existing Chromium installation.
 
 Theme unit tests cover the initial appearance, saved choices, device changes, restricted storage, and cross-tab updates. Browser tests additionally exercise the appearance control, keyboard dismissal, mobile navigation, and persistence across routes and reloads.
+
+Password-reset tests cover token validation, the administrator allowlist,
+password-policy retries, session isolation, and cookie cleanup. Browser tests
+check that the token stays out of navigation URLs and that a missing recovery
+link cannot authorize a password change.
 
 ## Vercel
 

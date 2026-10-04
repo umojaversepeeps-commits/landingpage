@@ -12,8 +12,9 @@ const protectedPaths = [
 ];
 
 test("anonymous dashboard requests redirect before exposing content", async ({ request }) => {
+  const requestHeaders: Record<string, string>[] = [{}, { RSC: "1", "Next-Router-Prefetch": "1" }];
   for (const path of protectedPaths) {
-    for (const headers of [{}, { RSC: "1", "Next-Router-Prefetch": "1" }]) {
+    for (const headers of requestHeaders) {
       const response = await request.get(path, { headers, maxRedirects: 0 });
       expect(response.status(), path).toBe(307);
       const location = new URL(response.headers().location, response.url());

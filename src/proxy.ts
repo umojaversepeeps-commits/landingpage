@@ -12,6 +12,7 @@ export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   if (
     pathname === "/admin/login" ||
+    pathname === "/admin/reset-password" ||
     pathname === "/site/umojaverseupdate/login" ||
     pathname === "/site/umojaverseupdate/logout"
   ) {

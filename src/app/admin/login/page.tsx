@@ -11,12 +11,12 @@ export const dynamic = "force-dynamic";
 export default async function AdminLoginPage({
   searchParams,
 }: {
-  searchParams: Promise<{ next?: string }>;
+  searchParams: Promise<{ next?: string; reset?: string }>;
 }) {
-  const { next } = await searchParams;
+  const { next, reset } = await searchParams;
   const returnPath = adminReturnPath(next);
   const user = await getAdminUser();
-  if (user) redirect(returnPath);
+  if (user && reset !== "success") redirect(returnPath);
   const configured = isSupabaseConfigured();
   const hasAdmins = adminEmails().length > 0;
 
@@ -24,6 +24,11 @@ export default async function AdminLoginPage({
     <section className="container admin-login">
       <Eyebrow>Admin</Eyebrow>
       <h1>Sign in to manage content</h1>
+      {reset === "success" && (
+        <p role="status" className="admin-notice">
+          Password updated. Sign in with your new password.
+        </p>
+      )}
       {configured && hasAdmins ? (
         <>
           <p className="intro-copy">

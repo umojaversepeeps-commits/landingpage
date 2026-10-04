@@ -10,6 +10,7 @@
     "typecheck": "tsc --noEmit",
     "test:theme": "node --test tests/theme.test.mjs",
     "test:content": "node --test tests/content.test.mjs",
+    "test:password-reset": "node --test tests/reset-password.test.mjs",
     "test:e2e": "playwright test"
   },
   "dependencies": {
