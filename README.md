@@ -84,17 +84,29 @@ Theme unit tests cover the initial appearance, saved choices, device changes, re
 
 ## Vercel
 
-The Vercel project is `umojaverse-site`, connected to
-`umojaversepeeps-commits/landingpage` on GitHub. The repository root is the
-application root and the framework preset is Next.js. Production variables live
-in Vercel settings, not the repository. `.vercelignore` excludes local secrets,
-test artifacts, and original design/photo references from CLI uploads.
+Production runs in the existing Vercel project `umojatemplate`, team
+`griffins-projects-4324ce43`. Source code lives in
+`umojaversepeeps-commits/landingpage`. The repository root is the application
+root; the framework is Next.js, installation uses `npm ci`, and the build
+command is `npm run build`. Production variables live in Vercel settings.
+`.vercelignore` excludes local secrets, test artifacts, and original assets.
 
-The intended production domain is `umojaverse.xyz`, with `www.umojaverse.xyz`
-redirecting to it. Domain ownership verification is required before activation;
-see `truehost-dns-request.md` for the current DNS handoff. The Vercel fallback URL
-is https://umojaverse-site.vercel.app.
+https://umojaverse.xyz serves the site. `www.umojaverse.xyz` redirects to the
+apex domain with HTTP 308, preserving paths. Both domains and HTTPS were checked
+on 4 October 2026. See `truehost-dns-request.md` for DNS and certificate details.
 
-For a manual production deployment after validation, run `vercel --prod` from
-the repository root. Confirmed community/contact destinations remain optional
-environment variables; without them the site uses its documented X handoff.
+Deployments to this project currently use the CLI. Automatic Git deployments
+require repository write access for the GitHub account connected to Vercel,
+`FidelCoder`, followed by connecting the repository in Vercel project settings.
+The outdated `Griffins-sys254/umojatemplate` repository has been disconnected.
+
+Before a manual production deployment, confirm that the local Vercel link points
+to `umojatemplate` in `griffins-projects-4324ce43`, then run:
+
+```sh
+vercel --prod --scope griffins-projects-4324ce43
+```
+
+The separate deployment at https://umojaverse-site.vercel.app remains available.
+Confirmed community/contact destinations remain optional environment variables;
+without them the site uses its documented X handoff.
