@@ -54,6 +54,7 @@ test("all main pages have a heading, working internal destinations, and fit the 
   for (const path of [
     "/",
     "/programs",
+    "/blog",
     "/projects",
     "/about",
     "/partners",
@@ -91,16 +92,13 @@ test("the mobile menu supports Escape and navigation", async ({ page }) => {
   );
 });
 
-test("program filters show matching programs and an honest upcoming state", async ({
+test("program filters sort by status and show an honest empty state", async ({
   page,
 }) => {
   await page.goto("/programs");
-  await expect(page.locator(".program-row")).toHaveCount(3);
-  await page.getByRole("button", { name: "Bootcamps", exact: true }).click();
-  await expect(page.locator(".program-row")).toHaveCount(1);
-  await expect(
-    page.getByRole("heading", { name: "Arbitrum Pulse Bootcamp" }),
-  ).toBeVisible();
+  await expect(page.locator(".program-row")).toHaveCount(2);
+  await page.getByRole("button", { name: "Past events", exact: true }).click();
+  await expect(page.locator(".program-row")).toHaveCount(2);
   await page.getByRole("button", { name: "Upcoming", exact: true }).click();
   await expect(
     page.getByRole("heading", { name: "The next chapter is on its way." }),

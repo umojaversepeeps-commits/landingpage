@@ -1,19 +1,27 @@
 import type { Metadata } from "next";
+import { ButtonLink, CommunityImage, Eyebrow, PageIntro } from "@/components/ui";
 import {
-  ButtonLink,
-  CommunityImage,
-  Eyebrow,
-  PageIntro,
-} from "@/components/ui";
-import { ProgramBrowser } from "@/components/program-browser";
+  ProgramBrowser,
+  type ProgramView,
+} from "@/components/program-browser";
+import { getPrograms } from "@/lib/content";
+import { programStatus } from "@/lib/content-types";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Programs & Events",
   description:
-    "Explore Umojaverse workshops, campus tours, and bootcamps. Learn and build with other developers.",
+    "Explore Umojaverse workshops, campus tours, and community programs. Learn and build with other developers.",
 };
 
-export default function ProgramsPage() {
+export default async function ProgramsPage() {
+  const programs = await getPrograms();
+  const views: ProgramView[] = programs.map((program) => ({
+    ...program,
+    status: programStatus(program),
+  }));
+
   return (
     <>
       <PageIntro
@@ -53,9 +61,9 @@ export default function ProgramsPage() {
         </div>
         <div className="catalog-heading">
           <h2>Explore our programs</h2>
-          <span className="quiet-label">Past editions & what’s next</span>
+          <span className="quiet-label">Active, upcoming & past</span>
         </div>
-        <ProgramBrowser />
+        <ProgramBrowser programs={views} />
         <div className="simple-callout">
           <div>
             <h2>Be part of the next chapter.</h2>

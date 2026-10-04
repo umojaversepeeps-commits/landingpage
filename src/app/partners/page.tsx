@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { EnquiryForm } from "@/components/enquiry-form";
-import { Eyebrow, PageIntro, TextLink } from "@/components/ui";
+import { PageIntro, TextLink } from "@/components/ui";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {

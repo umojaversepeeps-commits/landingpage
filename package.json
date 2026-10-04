@@ -9,9 +9,12 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test:theme": "node --test tests/theme.test.mjs",
+    "test:content": "node --test tests/content.test.mjs",
     "test:e2e": "playwright test"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.117.2",
     "next": "16.3.3",
     "react": "19.2.8",
     "react-dom": "19.2.8"

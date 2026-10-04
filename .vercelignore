@@ -1,0 +1,15 @@
+.git/
+.env*
+node_modules/
+.next/
+.publish/
+out/
+*.tsbuildinfo
+playwright-report/
+test-results/
+design/
+select/
+photos/
+/*.jpg
+tests/
+truehost-dns-request.md

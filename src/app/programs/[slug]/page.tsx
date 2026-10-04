@@ -1,20 +1,25 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { programs } from "@/lib/site";
-import { ButtonLink, CommunityImage, Eyebrow, TextLink } from "@/components/ui";
+import { ButtonLink, Eyebrow, TextLink } from "@/components/ui";
+import { CoverImage, VideoEmbed } from "@/components/media-embed";
+import { getProgram } from "@/lib/content";
+import {
+  formatDate,
+  programStatus,
+  programStatusLabels,
+} from "@/lib/content-types";
+import { renderMarkdown } from "@/lib/markdown";
 
-export const dynamicParams = false;
-export function generateStaticParams() {
-  return programs.map((p) => ({ slug: p.slug }));
-}
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const program = programs.find((p) => p.slug === slug);
+  const program = await getProgram(slug);
   return {
     title: program?.title || "Program not found",
     description: program?.description,
@@ -27,51 +32,87 @@ export default async function ProgramDetail({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const program = programs.find((p) => p.slug === slug);
+  const program = await getProgram(slug);
   if (!program) notFound();
+
+  const status = programStatus(program);
+  const start = formatDate(program.startDate);
+  const end = formatDate(program.endDate);
+  const dateLabel =
+    start && end && start !== end
+      ? `${start} – ${end}`
+      : start || program.period;
+  const bodyHtml = program.body ? renderMarkdown(program.body) : "";
+
   return (
     <>
       <section className="container detail-header">
         <Link href="/programs" className="back-link">
-          ← Programs & Events
+          ← Programs
         </Link>
         <Eyebrow>{program.category}</Eyebrow>
         <h1>{program.title}</h1>
         <p className="intro-copy">{program.description}</p>
         <div className="detail-meta">
-          <span>{program.period}</span>
-          <span>{program.location}</span>
-          <span className="tag">{program.status}</span>
+          {dateLabel && <span>{dateLabel}</span>}
+          {program.location && <span>{program.location}</span>}
+          <span className={`status-badge status-${status}`}>
+            {programStatusLabels[status]}
+          </span>
         </div>
       </section>
-      {slug === "arbitrum-pulse-ethiopia" && (
+
+      {program.coverImageUrl && (
         <div className="container program-photo">
-          <CommunityImage
+          <CoverImage
+            src={program.coverImageUrl}
+            alt={program.title}
             priority
-            variant="gathering"
-            className="panorama"
-            caption="The people behind the gathering."
-            sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1280px) calc(100vw - 64px), 1184px"
+            caption={`${program.category} · ${program.location || "Umojaverse"}`}
           />
         </div>
       )}
+
+      {program.videoUrl && (
+        <div className="container program-photo">
+          <VideoEmbed url={program.videoUrl} title={program.title} />
+        </div>
+      )}
+
       <section className="container detail-grid content-section">
         <div className="prose">
-          <h2>Learning through participation.</h2>
-          <p>{program.overview}</p>
-          <h2>Inside the program</h2>
-          <ul>
-            {program.highlights.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-          <p className="source-note">
-            This is an archived program. Find the published account and original
-            details below.
-          </p>
-          <TextLink href={program.source} external>
-            {program.sourceLabel}
-          </TextLink>
+          {program.overview && (
+            <>
+              <h2>Learning through participation.</h2>
+              <p>{program.overview}</p>
+            </>
+          )}
+          {program.highlights.length > 0 && (
+            <>
+              <h2>Inside the program</h2>
+              <ul>
+                {program.highlights.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </>
+          )}
+          {bodyHtml && (
+            <div
+              className="rich-body"
+              dangerouslySetInnerHTML={{ __html: bodyHtml }}
+            />
+          )}
+          {program.source && (
+            <>
+              <p className="source-note">
+                Find the published account and original details below.
+              </p>
+              <TextLink href={program.source} external>
+                {program.sourceLabel || "Read more"}
+              </TextLink>
+            </>
+          )}
         </div>
         <aside>
           <div className="aside-panel">
@@ -87,28 +128,6 @@ export default async function ProgramDetail({
           </div>
         </aside>
       </section>
-      {slug === "arbitrum-builders-initiative" && (
-        <section className="container related-story">
-          <div className="program-outcome">
-            <Eyebrow>Kenya · 2024 initiative</Eyebrow>
-            <strong>23</strong>
-            <p>
-              Project submissions from the campus tour and virtual hackerhouse.
-            </p>
-          </div>
-          <div>
-            <Eyebrow>Beyond the workshop</Eyebrow>
-            <h2>What came next?</h2>
-            <p>
-              Explore the published outcomes of the campus tour and virtual
-              hackerhouse.
-            </p>
-            <TextLink href="/projects/builders-initiative">
-              Read the community story
-            </TextLink>
-          </div>
-        </section>
-      )}
     </>
   );
 }

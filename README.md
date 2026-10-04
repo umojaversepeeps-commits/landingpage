@@ -26,6 +26,22 @@ npm run start
 - `/about` — purpose and community values.
 - `/partners` — collaboration options and an enquiry draft flow.
 - `/join` — community introduction, a confirmed destination, and accessible expandable questions.
+- `/blog` — published community posts and individual articles.
+- `/admin` and `/site/umojaverseupdate` — authenticated content dashboards.
+
+## Content dashboard
+
+Run `supabase/schema.sql` in your Supabase project to create programs, posts,
+publication policies, the public media bucket, and initial content. Set the
+Supabase variables listed in `.env.example` in `.env.local` for development and
+in Vercel's production environment for deployment. Keep the service role key
+server-only; never commit `.env.local` or credentials.
+
+Create an administrator in Supabase Auth and put their email in `ADMIN_EMAILS`.
+Only listed accounts may sign in to the dashboard; an empty allowlist denies
+access. Editors can manage publication, dates, Markdown, video links, and cover
+images. Image uploads are limited to 4MB to fit Vercel's request-size limit.
+Public content falls back to the bundled seed data when Supabase is unavailable.
 
 ## Content and contact
 
@@ -57,6 +73,7 @@ npm run typecheck
 npm run lint
 npm run build
 npm run test:theme
+npm run test:content
 npx playwright install chromium
 npm run test:e2e
 ```
@@ -67,6 +84,17 @@ Theme unit tests cover the initial appearance, saved choices, device changes, re
 
 ## Vercel
 
-Import the project into Vercel and use its Next.js framework preset. The repository root is the application root. Add any confirmed public environment values in project settings and deploy. No custom server or Vercel configuration file is required.
+The Vercel project is `umojaverse-site`, connected to
+`umojaversepeeps-commits/landingpage` on GitHub. The repository root is the
+application root and the framework preset is Next.js. Production variables live
+in Vercel settings, not the repository. `.vercelignore` excludes local secrets,
+test artifacts, and original design/photo references from CLI uploads.
 
-Publication still needs confirmed community/contact destinations. No deployment has been performed by this implementation.
+The intended production domain is `umojaverse.xyz`, with `www.umojaverse.xyz`
+redirecting to it. Domain ownership verification is required before activation;
+see `truehost-dns-request.md` for the current DNS handoff. The Vercel fallback URL
+is https://umojaverse-site.vercel.app.
+
+For a manual production deployment after validation, run `vercel --prod` from
+the repository root. Confirmed community/contact destinations remain optional
+environment variables; without them the site uses its documented X handoff.
